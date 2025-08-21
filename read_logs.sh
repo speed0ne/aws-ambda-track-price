@@ -1,0 +1,1 @@
+chalice logs --name index

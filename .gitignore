@@ -1,0 +1,9 @@
+.chalice/deployments/
+.chalice/venv/
+.claude
+__pycache__/
+.venv
+.env*
+dev.json
+
+    
