@@ -24,7 +24,7 @@ def extract_price(html):
 def extract_promotion(html):
     """Extract the promotion text from HTML."""
     # Look for "SPEDIZIONE GRATUITA SOLO PER AGOSTO. Accessori inclusi: PIETRA EFFEUNO"
-    promotion_pattern = r'SPEDIZIONE GRATUITA SOLO PER AGOSTO[^"]*PIETRA EFFEUNO'
+    promotion_pattern = r'<strong>Accessori inclusi: PIETRA EFFEUNO</strong>'
     match = re.search(promotion_pattern, html)
     return match.group(0) if match else ''
 
@@ -36,6 +36,7 @@ def scrape_effeuno():
     
     price = extract_price(html)
     promotion = extract_promotion(html)
+    promotion = promotion.removeprefix('<strong>').removesuffix('</strong>') if promotion else ''
     
     result = {
         'price': price,

@@ -35,7 +35,7 @@ def index(event):
     price_changed = price_value < 899
     promotion_changed = (
         scraped_data["promotion"]
-        != "SPEDIZIONE GRATUITA SOLO PER AGOSTO. Accessori inclusi: PIETRA EFFEUNO"
+        != "Accessori inclusi: PIETRA EFFEUNO"
     )
 
     if promotion_changed:
